@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game Component result equal in snapshot 1`] = `
+<h1>El juego de la verdad</h1>
+<!--v-if-->
+<div class="bg-dark"></div>
+<div class="indecision-container"><input type="text" placeholder="Hazme una pregunta">
+  <p>Recuerda terminar con un signo de interrogación (?)</p>
+  <!--v-if-->
+</div>
+`;

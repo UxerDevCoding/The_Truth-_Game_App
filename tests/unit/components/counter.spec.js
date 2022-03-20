@@ -3,16 +3,16 @@ import Counter from '@/components/Counter';
 
 describe('Counter Component', () => {
 
-    let wrapper = shallowMount(Counter)
+    let wrapper = shallowMount(Counter);
 
     beforeEach(() => {
-        wrapper= shallowMount(Counter)
+        wrapper= shallowMount(Counter);
     })
 
-    // test('result equal in snapshot', () => {
+    test('result equal in snapshot', () => {
 
-    //     expect(wrapper.html()).toMatchSnapshot()
-    // });
+        expect(wrapper.html()).toMatchSnapshot()
+    });
 
     test('h2 value dom is equal than value counter', () => {
         
@@ -24,7 +24,7 @@ describe('Counter Component', () => {
         expect(h2.text()).toBe('Counter');
      })
 
-    test('p data test id value must be 100', () => {
+    test('p data test id value should be 100', () => {
 
         const value = wrapper.find('[data-test-id="counter"]').text();
 
@@ -59,5 +59,28 @@ describe('Counter Component', () => {
 
         expect(value).toBe('98');
 
+    })
+
+    test('must be set default value in props', () => {
+
+        const {start} = wrapper.props();
+
+        const value = wrapper.find('[data-test-id="counter"]').text();
+
+        expect(Number(value)).toBe(start);
+
+    })
+
+    test('h2 show title prop', () => {
+
+        const title = 'Esto es un título en h2';
+
+        const wrapper = shallowMount(Counter, {
+            props: {
+                title,
+            }
+        });
+
+        expect(wrapper.find('h2').text()).toBe(title);
     })
 });

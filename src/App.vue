@@ -1,17 +1,17 @@
 <template>
- <Juego/>
+ <Game/>
 </template>
 
 <script>
 import Counter from './components/Counter.vue'
-import Juego from './components/Juego.vue'
+import Game from './components/Game.vue'
 
 
 export default {
   name: 'App',
   components: {
     Counter,
-    Juego,
+    Game,
   }
 }
 </script>
